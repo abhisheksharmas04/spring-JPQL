@@ -14,12 +14,7 @@ public class CoronaVaccineManagementServiceImpl implements ICoronaVaccineManagem
 	private CoronaVaccineRepo coronaRepo;
 
 	@Override
-	public long countOfVaccines() {
-		return coronaRepo.getVacciesCount();
-	}
-
-	@Override
-	public Object getVaccineDataByPriceRange(double min, double max) {
-		return coronaRepo.getVaccineAggrigateDataByPriceRange(min, max);
+	public int updateVaccinePriceByCountry(Double newPrice, String country) {
+		return coronaRepo.updatePriceByCompany(newPrice, country);
 	}
 }
