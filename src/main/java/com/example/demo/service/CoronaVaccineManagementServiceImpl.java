@@ -17,4 +17,9 @@ public class CoronaVaccineManagementServiceImpl implements ICoronaVaccineManagem
 	public int updateVaccinePriceByCountry(Double newPrice, String country) {
 		return coronaRepo.updatePriceByCompany(newPrice, country);
 	}
+
+	@Override
+	public int removeVaccinesByPriceRange(Double startPrice, Double endPrice) {
+		return coronaRepo.deleteVaccinesByPriceRange(startPrice, endPrice);
+	}
 }

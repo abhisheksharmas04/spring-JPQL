@@ -17,6 +17,7 @@ public class CurdRepositoryRunner implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		System.out.println(service.updateVaccinePriceByCountry(700.0, "Russian"));
+		System.out.println(service.removeVaccinesByPriceRange(600.0, 700.0));
 	}
 
 }
