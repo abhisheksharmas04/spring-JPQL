@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,17 +18,12 @@ public class CoronaVaccineManagementServiceImpl implements ICoronaVaccineManagem
 	private CoronaVaccineRepo coronaRepo;
 
 	@Override
-	public List<CoronaVaccine> fetchVaccinesByCompany(String companyName) {
-		return coronaRepo.searchVaccinesByCompany(companyName);
+	public Optional<CoronaVaccine> fetchVaccineByName(String name) {
+		return coronaRepo.searchVaccineByName(name);
 	}
 
 	@Override
-	public List<CoronaVaccine> fetchVaccinesByPriceRange(double min, double max) {
-		return coronaRepo.searchVaccinesByPriceRange(min, max);
-	}
-
-	@Override
-	public List<Object[]> fetchVaccineDataByNames(String name1, String name2) {
-		return coronaRepo.searchVanniceDetailsByNames(name1, name2);
+	public Object fetchVaccineDataByName(String name) {
+		return coronaRepo.searchVaccineDataByName(name);
 	}
 }
